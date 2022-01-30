@@ -1030,19 +1030,6 @@ class Calculator(Canvas):
         )
         self.grade_combobox.bind("<<ComboboxSelected>>", self.calculateEstimate)
 
-        for i in range(9):
-            self.EntryVal[i].trace(
-                "w", partial(self.EntryChanges, i, self.EntryVal[i])
-            )  # ni pass index (i) tp x tau la sbb kt changeestimate da leh access ui index
-            self.row[i][3].bind(
-                "<1>",
-                lambda event: self.warningInfo(
-                    "Unavailable! No subject or coursework assigned", self.warning_label
-                )
-                if self.row[i][3]["state"] != "normal"
-                else None,
-            )  # click
-
     def fetch(self, event=None):
         self.subject_combobox["values"] = get_subjects()
 
@@ -1203,6 +1190,21 @@ class Calculator(Canvas):
                     )
                     i += 1
         self.changeTotalRow(totalmark=totalMark, totalpercentage=totalPercentage)
+
+        # Bind error function to all disabled entry
+        for i in range(9):
+            self.EntryVal[i].trace(
+                "w", partial(self.EntryChanges, i, self.EntryVal[i])
+            )  # ni pass index (i) tp x tau la sbb kt changeestimate da leh access ui index
+            print(self.row[i][3]["state"])
+            if self.row[i][3]["state"] != "normal":
+                self.row[i][3].bind(
+                    "<1>",
+                    lambda event: self.warningInfo(
+                        "Unavailable! No subject or coursework assigned",
+                        self.warning_label,
+                    ),
+                )
 
     def balancingAlgoritm(
         self,

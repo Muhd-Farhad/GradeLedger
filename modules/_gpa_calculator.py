@@ -13,7 +13,7 @@ from tkinter import (
     StringVar,
 )
 from functools import partial
-from modules._dataprocessing import get_subjects, isinteger, isfloat
+from modules._dataprocessing import get_subjects, isfloat
 
 grade_list = ["", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "E", "F"]
 row_count = 0  # table row
@@ -216,7 +216,7 @@ class Table:
                         grade = self.grade_combobox.get()
                         totalQPPts += gradePoint[grade] * CreditHrs
                         continue
-                    if len(self.gradePts.get()) > 0 and isfloat(i[1].get()):
+                    if len(self.gradePts.get()) > 0 and isfloat(self.gradePts.get()):
                         print("manual")
                         self.grade_combobox["state"] = "disabled"
                         totalQPPts += float(self.gradePts.get()) * CreditHrs
@@ -226,10 +226,6 @@ class Table:
             self.canvas.HoloLabel["text"] = f"{VAL:.2f}"
         else:
             self.canvas.HoloLabel["text"] = "-"
-
-        print(
-            f"changes detected: TotalGRDPTS: {totalQPPts} | totalCreditHrs: {totalCreditHrs}"
-        )
 
     def ResetTable(self, canvas):
         global row_count
