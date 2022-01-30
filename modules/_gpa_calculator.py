@@ -13,7 +13,7 @@ from tkinter import (
     StringVar,
 )
 from functools import partial
-from _dataprocessing import get_subjects, isinteger, isfloat
+from modules._dataprocessing import get_subjects, isinteger, isfloat
 
 grade_list = ["", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "E", "F"]
 row_count = 0  # table row
@@ -89,7 +89,7 @@ class GPACalculator(Canvas):
         self.entry_image_1 = PhotoImage(file=self.relative_to_assets("entry_1.png"))
 
         self.create_row()
-    
+
     def create_row(self):
         global row_count
         subject_list = get_subjects()
@@ -101,7 +101,7 @@ class GPACalculator(Canvas):
     # Declare StringVar for Table
 
     def relative_to_assets(self, path: str) -> Path:
-        ASSETS_PATH = Path(__file__).parent / Path("./assets/gpa_calculator")
+        ASSETS_PATH = Path(__file__).parents[1] / Path("./assets/gpa_calculator")
         return ASSETS_PATH / Path(path)
 
 
@@ -248,5 +248,5 @@ class Table:
         Table.entry_list = []
 
     def relative_to_assets(self, path: str) -> Path:
-        ASSETS_PATH = Path(__file__).parent / Path("./assets/gpa_calculator")
+        ASSETS_PATH = Path(__file__).parents[1] / Path("./assets/gpa_calculator")
         return ASSETS_PATH / Path(path)

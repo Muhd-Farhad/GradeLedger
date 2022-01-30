@@ -8,12 +8,10 @@ from tkinter import (
     Button,
     Frame,
 )
-from tkinter.messagebox import askyesno
 
 # Internal module
-from _dataprocessing import (
+from modules._dataprocessing import (
     get_subjects,
-    isfloat,
     get_coursework,
     remove_row,
     add_subject,
@@ -738,7 +736,8 @@ class EditCourseworkWindow(Toplevel):
                     self.coursework,
                     self.entry_2.get(),
                     self.entry_3.get(),
-                ), self.destroy()
+                ),
+                self.destroy(),
             ),
             relief="flat",
         )

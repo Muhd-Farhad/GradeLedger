@@ -13,7 +13,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 
 import matplotlib.pyplot as plt
 
-from _dataprocessing import get_subjects, get_coursework, get_all_coursework
+from modules._dataprocessing import get_subjects, get_coursework, get_all_coursework
 
 plt.style.use("cyberpunk")
 for param in ["text.color", "axes.labelcolor", "xtick.color", "ytick.color"]:

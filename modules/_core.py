@@ -1,10 +1,10 @@
 from pathlib import Path
 from tkinter import Tk, ttk, Canvas, Button, PhotoImage, Frame, Toplevel
 
-from _calculator import Calculator
-from _gpa_calculator import GPACalculator
-from _visualize import Visualization
-from _dataprocessing import writeData
+from modules._calculator import Calculator
+from modules._gpa_calculator import GPACalculator
+from modules._visualize import Visualization
+from modules._dataprocessing import writeData
 
 
 class GradeLedger(Tk):  # inherit tk class
@@ -17,7 +17,7 @@ class GradeLedger(Tk):  # inherit tk class
         self.first_time = 0
 
         # Theme Wrapper
-        theme_filepath = Path(__file__).parent / "sun-valley.tcl"
+        theme_filepath = Path(__file__).parents[1] / "sun-valley.tcl"
         self.tk.call("source", theme_filepath)
         self.tk.call("set_theme", "dark")
         self.resizable(False, False)
@@ -161,7 +161,7 @@ class GradeLedger(Tk):  # inherit tk class
         self.geometry(f"+{event.x_root - xwin}+{event.y_root}")
 
     def relative_to_assets(self, path: str) -> Path:
-        ASSETS_PATH = Path(__file__).parent / Path("./assets/root")
+        ASSETS_PATH = Path(__file__).parents[1] / Path("./assets/root")
         return ASSETS_PATH / Path(path)
 
 
@@ -189,7 +189,7 @@ class Intro(Canvas):
         image_4 = self.create_image(429.0, 480.0, image=self.image_image_4)
 
     def relative_to_assets(self, path: str) -> Path:
-        ASSETS_PATH = Path(__file__).parent / Path("./assets/root")
+        ASSETS_PATH = Path(__file__).parents[1] / Path("./assets/root")
         return ASSETS_PATH / Path(path)
 
 
@@ -276,5 +276,5 @@ class ConfirmationBox(Toplevel):
         return self.status
 
     def relative_to_assets(self, path: str) -> Path:
-        ASSETS_PATH = Path(__file__).parent / Path("./assets/customize")
+        ASSETS_PATH = Path(__file__).parents[1] / Path("./assets/customize")
         return ASSETS_PATH / Path(path)

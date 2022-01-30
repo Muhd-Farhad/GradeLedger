@@ -7,8 +7,8 @@ from math import modf
 import numpy as np
 
 # Internal module
-from _dataprocessing import get_subjects, isfloat, dataLength, retrieveData
-from _customize import CustomizeSubject
+from modules._dataprocessing import get_subjects, isfloat, dataLength, retrieveData
+from modules._customize import CustomizeSubject
 
 
 class Calculator(Canvas):
@@ -1332,7 +1332,7 @@ class Calculator(Canvas):
         self.calculateEstimate()
 
     def relative_to_assets(self, path: str) -> Path:
-        ASSETS_PATH = Path(__file__).parent / Path("./assets/calculator")
+        ASSETS_PATH = Path(__file__).parents[1] / Path("./assets/calculator")
         return ASSETS_PATH / Path(path)
 
     def share_data(self):
