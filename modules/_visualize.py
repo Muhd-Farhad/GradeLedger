@@ -30,6 +30,12 @@ colors = [
 
 plt.rcParams.update({"font.size": 8})  # Change font size
 
+import pyglet
+
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+
 
 class Visualization(Canvas):
     def __init__(self, master, data):

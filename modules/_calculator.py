@@ -10,6 +10,12 @@ import numpy as np
 from modules._dataprocessing import get_subjects, isfloat, dataLength, retrieveData
 from modules._customize import CustomizeSubject
 
+import pyglet
+
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+
 
 class Calculator(Canvas):
     def __init__(self, master):

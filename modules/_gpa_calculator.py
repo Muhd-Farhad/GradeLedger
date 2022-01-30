@@ -15,6 +15,13 @@ from tkinter import (
 from functools import partial
 from modules._dataprocessing import get_subjects, isfloat
 
+import pyglet
+
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+
+
 grade_list = ["", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "E", "F"]
 row_count = 0  # table row
 

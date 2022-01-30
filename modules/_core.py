@@ -6,6 +6,12 @@ from modules._gpa_calculator import GPACalculator
 from modules._visualize import Visualization
 from modules._dataprocessing import writeData
 
+import pyglet
+
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+
 
 class GradeLedger(Tk):  # inherit tk class
     def __init__(self, *args, **kwargs):

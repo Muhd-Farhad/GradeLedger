@@ -20,6 +20,12 @@ from modules._dataprocessing import (
     edit_coursework,
 )
 
+import pyglet
+
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
+pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+
 
 def relative_to_assets(path: str) -> Path:
     ASSETS_PATH = Path(__file__).parent / Path("./assets/customize")
