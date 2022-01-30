@@ -1196,7 +1196,7 @@ class Calculator(Canvas):
             self.EntryVal[i].trace(
                 "w", partial(self.EntryChanges, i, self.EntryVal[i])
             )  # ni pass index (i) tp x tau la sbb kt changeestimate da leh access ui index
-            print(self.row[i][3]["state"])
+
             if self.row[i][3]["state"] != "normal":
                 self.row[i][3].bind(
                     "<1>",
