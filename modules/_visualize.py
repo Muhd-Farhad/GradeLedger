@@ -28,7 +28,8 @@ colors = [
 ]
 
 
-plt.rcParams.update({'font.size': 8})   # Change font size
+plt.rcParams.update({"font.size": 8})  # Change font size
+
 
 class Visualization(Canvas):
     def __init__(self, master, data):
@@ -45,9 +46,8 @@ class Visualization(Canvas):
         self.place(x=0, y=0)
         self.EntryVal = data[0]
         self.subject_combobox = data[1]
-        self.subject = ''
+        self.subject = ""
         self.GUI()
-
 
     def GUI(self):
         self.place(x=0, y=0)
@@ -61,25 +61,14 @@ class Visualization(Canvas):
             font=("Montserrat SemiBold", 18 * -1),
         )
 
-        self.create_rectangle(
-            187.0,
-            548.0,
-            418.0,
-            699.0,
-            fill="#45235A",
-            outline="")
+        # Rectangle background for total subject
+        self.create_rectangle(187.0, 548.0, 418.0, 699.0, fill="#8b05f2", outline="")
 
-        self.create_rectangle(
-            431.0,
-            548.0,
-            662.0,
-            699.0,
-            fill="#0F4A63",
-            outline="")
-
+        # Rectangle background for total coursework
+        self.create_rectangle(431.0, 548.0, 662.0, 699.0, fill="#0534b3", outline="")
 
         self.subjects_text = self.create_text(
-            290,
+            280,
             585.0,
             anchor="nw",
             justify="center",
@@ -89,7 +78,7 @@ class Visualization(Canvas):
         )
 
         self.courseworks_text = self.create_text(
-            510.0,
+            520.0,
             585.0,
             anchor="nw",
             text="26",
@@ -115,7 +104,6 @@ class Visualization(Canvas):
             font=("Montserrat Bold", 14 * -1),
         )
 
-
         self.create_rectangle(156.0, 339.0, 688.0, 531.0, fill="#69c7fa", outline="")
 
         self.PerformanceChart()
@@ -135,12 +123,11 @@ class Visualization(Canvas):
             if len(self.EntryVal[i].get()) > 0:
                 assessment_mark.append(float(self.EntryVal[i].get()))
 
-                
         if len(assessment_mark) > 2:
 
             self.create_rectangle(133.0, 79.0, 716.0, 316.0, fill="#7d19ff", outline="")
 
-            assessment_mark = [float(i)/sum(assessment_mark) for i in assessment_mark]
+            assessment_mark = [float(i) / sum(assessment_mark) for i in assessment_mark]
 
             self.df = pd.DataFrame({"A": assessment_mark})
             print(self.df)
@@ -180,14 +167,14 @@ class Visualization(Canvas):
         else:
             self.create_rectangle(133.0, 79.0, 716.0, 316.0, fill="#171717", outline="")
             self.create_text(
-            320.0,
-            180.0,
-            anchor="nw",
-            justify='center',
-            text="Not enough data.\nPlease fill in at least 3 coursework",
-            fill="#FFFFFF",
-            font=("Montserrat", 12 * -1),
-        )
+                320.0,
+                180.0,
+                anchor="nw",
+                justify="center",
+                text="Not enough data.\nPlease fill in at least 3 coursework",
+                fill="#FFFFFF",
+                font=("Montserrat", 12 * -1),
+            )
 
     def SubjectCourseworkChart(self):
         f = Figure(figsize=(5.3, 1.9), dpi=100)
@@ -222,9 +209,7 @@ class Visualization(Canvas):
         self.canvas_2.draw()
         self.canvas_2.get_tk_widget().place(x=157.0, y=340.0)
 
-
     def Refresh(self):
         self.TotalRow()
         self.PerformanceChart()
         self.SubjectCourseworkChart()
-
