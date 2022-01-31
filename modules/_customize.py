@@ -34,7 +34,7 @@ pyglet.font.add_file(
 
 
 def relative_to_assets(path: str) -> Path:
-    ASSETS_PATH = Path(__file__).parent / Path("./assets/customize")
+    ASSETS_PATH = Path(__file__).parents[1] / Path("./assets/customize")
     return ASSETS_PATH / Path(path)
 
 
@@ -296,7 +296,7 @@ class AddSubject(Toplevel):
         button_2.place(x=156.0, y=99.0, width=91.0, height=28.0)
 
     def relative_to_assets(self, path: str) -> Path:
-        ASSETS_PATH = Path(__file__).parent / Path("./assets/customize/addsubject")
+        ASSETS_PATH = Path(__file__).parents[1] / Path("./assets/customize/addsubject")
         return ASSETS_PATH / Path(path)
 
 
@@ -367,7 +367,9 @@ class DeleteSubject(Toplevel):
             del_subject(self.subject_combobox.get())
 
     def relative_to_assets(self, path: str) -> Path:
-        ASSETS_PATH = Path(__file__).parent / Path("./assets/customize/deletesubject")
+        ASSETS_PATH = Path(__file__).parents[1] / Path(
+            "./assets/customize/deletesubject"
+        )
         return ASSETS_PATH / Path(path)
 
 
@@ -494,7 +496,9 @@ class AddCoursework(Toplevel):
         button_2.place(x=160, y=309.0, width=91.0, height=28.0)
 
     def relative_to_assets(self, path: str) -> Path:
-        ASSETS_PATH = Path(__file__).parent / Path("./assets/customize/addcoursework")
+        ASSETS_PATH = Path(__file__).parents[1] / Path(
+            "./assets/customize/addcoursework"
+        )
         return ASSETS_PATH / Path(path)
 
 
@@ -756,7 +760,9 @@ class EditCourseworkWindow(Toplevel):
         button_2.place(x=110, y=220.0, width=91.0, height=28.0)
 
     def relative_to_assets(self, path: str) -> Path:
-        ASSETS_PATH = Path(__file__).parent / Path("./assets/customize/addcoursework")
+        ASSETS_PATH = Path(__file__).parents[1] / Path(
+            "./assets/customize/addcoursework"
+        )
         return ASSETS_PATH / Path(path)
 
 
