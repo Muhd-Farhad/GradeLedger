@@ -22,9 +22,15 @@ from modules._dataprocessing import (
 
 import pyglet
 
-pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
-pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
-pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+pyglet.font.add_file(
+    str(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
+)
+pyglet.font.add_file(
+    str(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
+)
+pyglet.font.add_file(
+    str(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+)
 
 
 def relative_to_assets(path: str) -> Path:

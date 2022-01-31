@@ -1,25 +1,25 @@
 from pathlib import Path
 from tkinter import (
-    Tk,
-    Toplevel,
     ttk,
     Canvas,
     Entry,
     PhotoImage,
-    StringVar,
-    Button,
-    Frame,
     Label,
-    StringVar,
 )
 from functools import partial
 from modules._dataprocessing import get_subjects, isfloat
 
 import pyglet
 
-pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
-pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
-pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+pyglet.font.add_file(
+    str(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
+)
+pyglet.font.add_file(
+    str(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
+)
+pyglet.font.add_file(
+    str(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+)
 
 
 grade_list = ["", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "E", "F"]

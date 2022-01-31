@@ -3,9 +3,15 @@ from pathlib import Path
 
 import pyglet
 
-pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
-pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
-pyglet.font.add_file(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+pyglet.font.add_file(
+    str(Path(__file__).parents[1] / Path("./font/Montserrat-Bold.otf"))
+)
+pyglet.font.add_file(
+    str(Path(__file__).parents[1] / Path("./font/Montserrat-Regular.otf"))
+)
+pyglet.font.add_file(
+    str(Path(__file__).parents[1] / Path("./font/Montserrat-SemiBold.otf"))
+)
 
 
 data_PATH = Path(__file__).parents[1] / "data.csv"
