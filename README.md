@@ -1,5 +1,7 @@
 # GradeLedger
 
+Made for Data Science Project Assignment.
+
 Grade Ledger helps you to achieve academic excellence by steering you into a proper learning path.
 
 ![gl-1](https://user-images.githubusercontent.com/20576651/151848491-0eb49b6f-c278-46f3-8dfe-67ad92b2c17d.png)
