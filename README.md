@@ -1,6 +1,6 @@
 # GradeLedger
 
-Made for Data Science Project Assignment.
+Made as part Data Science Project Assignmentand further deploy for the ease of use for BSD Students.
 
 Grade Ledger helps you to achieve academic excellence by steering you into a proper learning path.
 
